@@ -6,8 +6,8 @@
 [![Fedora CoreOS](https://img.shields.io/badge/Fedora%20CoreOS-51A2DA?style=for-the-badge&logo=fedora&logoColor=white)](https://getfedora.org/coreos/)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub release](https://img.shields.io/github/release/Astocanthus/low-layer-vault.svg)](https://github.com/Astocanthus/low-layer-vault/releases)
-[![GitHub issues](https://img.shields.io/github/issues/Astocanthus/low-layer-vault.svg)](https://github.com/Astocanthus/low-layer-vault/issues)
+[![GitHub release](https://img.shields.io/github/release/Astocanthus/low-layer-tftpboot.svg)](https://github.com/Astocanthus/low-layer-tftpboot/releases)
+[![GitHub issues](https://img.shields.io/github/issues/Astocanthus/low-layer-tftpboot.svg)](https://github.com/Astocanthus/low-layer-tftpboot/issues)
 ![Dell iDRAC](https://img.shields.io/badge/Dell%20iDRAC-%3E%3D9-blue?logo=dell)
 
 ## Overview
@@ -16,7 +16,7 @@ Complete network boot infrastructure using iPXE for automated OS deployment on D
 
 ## Infrastructure Components
 
-**Hardware**: Dell PowerEdge R340 and R740 servers with iDRAC9, Ubiquiti router for DHCP/routing, UEFI boot environment with iPXE support.
+**Hardware**: Dell PowerEdge R340 and R740 servers with iDRAC, Ubiquiti router for DHCP/routing, UEFI boot environment with iPXE support.
 
 **Core Files**: `autoexec.ipxe` main boot script with automated menu and OS selection, `ipxe.efi` UEFI-compatible bootloader binary.
 
@@ -59,7 +59,7 @@ Option 66 (TFTP Server): [IP of boot server]
 Option 67 (Boot filename): ipxe.efi
 ```
 
-**Dell Server Configuration**: iDRAC9 network setup for remote management with virtual media mounting and power management capabilities. BIOS/UEFI configured for network boot priority, UEFI boot mode enabled, network stack enabled for PXE functionality.
+**Dell Server Configuration**: iDRAC >= 9 network setup for remote management with virtual media mounting and power management capabilities. BIOS/UEFI configured for network boot priority, UEFI boot mode enabled, network stack enabled for PXE functionality.
 
 ## Boot Process Flow
 
@@ -73,10 +73,10 @@ Server powers on and initializes hardware, UEFI firmware loads and network stack
 
 ## Usage & Deployment
 
-**Initial Setup**: Configure Ubiquiti router DHCP settings with boot options, setup TFTP/HTTP server for iPXE files and OS images, configure Dell iDRAC9 network settings, set BIOS/UEFI boot order for network priority, deploy iPXE files to boot server.
+**Initial Setup**: Configure Ubiquiti router DHCP settings with boot options, setup TFTP/HTTP server for iPXE files and OS images, configure Dell iDRAC network settings, set BIOS/UEFI boot order for network priority, deploy iPXE files to boot server.
 Initial configuration made by [low-layer-platform/terraform/infrastructure](https://github.com/Astocanthus/low-layer-platform/tree/main/terraform/infrastructure) terraform project.
 
-**Deployment Process**: Power on target server (remotely via iDRAC9), server automatically boots from network, iPXE menu appears with OS options, select installation or wait for auto-selection, monitor progress through iDRAC9 console (IPMI).
+**Deployment Process**: Power on target server (remotely via iDRAC), server automatically boots from network, iPXE menu appears with OS options, select installation or wait for auto-selection, monitor progress through iDRAC console (IPMI).
 
 ## Troubleshooting & Management
 
