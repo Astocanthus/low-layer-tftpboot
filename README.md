@@ -1,9 +1,14 @@
 # Network Boot Setup - iPXE Infrastructure
 
-![Dell iDRAC](https://img.shields.io/badge/Dell%20iDRAC-%3E9-blue?logo=dell)
-![Ubiquiti](https://img.shields.io/badge/Ubiquiti-Dream%20Machine-0559C9?logo=ubiquiti)
-![iPXE](https://img.shields.io/badge/iPXE-UEFI-green)
-![Network Boot](https://img.shields.io/badge/Network%20Boot-Automated-orange)
+[![Dell](https://img.shields.io/badge/Dell%20PowerEdge-blue?style=for-the-badge&logo=dell&logoColor=white)](https://www.dell.com/support/kbdoc/en-us/000134115)
+[![Ubiquiti](https://img.shields.io/badge/Ubiquiti-Dream%20Machine-0559C9?style=for-the-badge&logo=ubiquiti&logoColor=white)](https://ui.com/)
+[![iPXE](https://img.shields.io/badge/iPXE-UEFI-green?style=for-the-badge&logo=boot&logoColor=white)](https://ipxe.org/)
+[![Fedora CoreOS](https://img.shields.io/badge/Fedora%20CoreOS-51A2DA?style=for-the-badge&logo=fedora&logoColor=white)](https://getfedora.org/coreos/)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub release](https://img.shields.io/github/release/Astocanthus/low-layer-vault.svg)](https://github.com/Astocanthus/low-layer-vault/releases)
+[![GitHub issues](https://img.shields.io/github/issues/Astocanthus/low-layer-vault.svg)](https://github.com/Astocanthus/low-layer-vault/issues)
+![Dell iDRAC](https://img.shields.io/badge/Dell%20iDRAC-%3E%3D9-blue?logo=dell)
 
 ## Overview
 
@@ -90,3 +95,4 @@ ping [BOOT_SERVER_IP]
 ```
 
 **Note**: This setup provides a scalable foundation for automated server deployments in datacenter environments. Regular testing and validation of the boot process ensures reliable automated installations.
+
