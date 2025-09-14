@@ -1,1 +1,2 @@
+# Exclude autoexec.ipxe because it contains sensitive information (iPXE server credentials)
 autoexec.ipxe
