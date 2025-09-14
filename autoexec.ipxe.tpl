@@ -11,18 +11,18 @@ ifstat
 show dns
 
 # Select Host type from FQDN/hostname
-iseq ${asset} OpenstackController && goto machine-controller ||
-iseq ${asset} OpenstackComputer && goto machine-compute ||
+iseq ${asset} KubeController && goto machine-controller ||
+iseq ${asset} KubeWorker && goto machine-compute ||
 goto machine-default
 
 :machine-controller
-set ignition_url http://${username}:${password}@${server}/ignition/os-controller.ign
-echo Openstack Controller config loaded
+set ignition_url http://${username}:${password}@${server}/ignition/kube-controller.ign
+echo Kube Controller config loaded
 goto boot
 
 :machine-compute
-set ignition_url http://${username}:${password}@${server}/ignition/os-computer.ign
-echo Openstack Computer config loaded
+set ignition_url http://${username}:${password}@${server}/ignition/kube-worker.ign
+echo Kube Worker config loaded
 goto boot
 
 :machine-default
